@@ -1,9 +1,10 @@
 package com.lyt.algorithm.training.leetcode.regular_expression_matching;
 
 class Solution {
-    private int[][] resultArray;
+    private boolean[][] boolResultArray;
     private char[] str;
     private char[] paternStr;
+    private char[] prePaternCharArray;
 
     public boolean isMatch(String s, String p) {
         if (null == p || p.isEmpty()) {
@@ -16,9 +17,55 @@ class Solution {
         if (null == s || s.isEmpty()) {
             return isEmptyPatern(paternStr, 0, paternStr.length);
         }
-        resultArray = new int[s.length() + 1][p.length() + 1];
+        boolResultArray = new boolean[s.length() + 1][p.length() + 1];
         str = s.toCharArray();
-        return match(0, 0, '-');
+        initPreChar();
+
+        for (int strIndex = str.length; strIndex >= 0; strIndex--) {
+            boolResultArray[strIndex][paternStr.length] = false;
+        }
+        for (int paternIndex = paternStr.length; paternIndex >= 0; paternIndex--) {
+            boolResultArray[str.length][paternIndex] = isEmptyPatern(paternStr, paternIndex, paternStr.length);
+        }
+
+        for (int strIndex = str.length - 1; strIndex >= 0; strIndex--) {
+            char charIterm = str[strIndex];
+            for (int paternIndex = paternStr.length - 1; paternIndex >= 0; paternIndex--) {
+                char paternIterm = paternStr[paternIndex];
+                if (paternIterm == '*') {
+                    if (isEqualsChar(prePaternCharArray[paternIndex], charIterm)) {
+                        if (boolResultArray[strIndex + 1][paternIndex + 1]
+                                || boolResultArray[strIndex + 1][paternIndex]) {
+                            boolResultArray[strIndex][paternIndex] = true;
+                        }
+                    }
+                } else {
+                    for (int emptyIndex = paternIndex; emptyIndex < paternStr.length; emptyIndex++) {
+                        if (isEmptyPatern(paternStr, paternIndex, emptyIndex + 1) && boolResultArray[strIndex][emptyIndex]) {
+                            boolResultArray[strIndex][paternIndex] = true;
+                            break;
+                        }
+                        if (isEmptyPatern(paternStr, paternIndex, emptyIndex) && isEqualsChar(paternStr[emptyIndex], charIterm) && boolResultArray[strIndex + 1][emptyIndex + 1]) {
+                            boolResultArray[strIndex][paternIndex] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return boolResultArray[0][0];
+    }
+
+    private void initPreChar() {
+        prePaternCharArray = new char[paternStr.length];
+        prePaternCharArray[0] = paternStr[0];
+        for (int i = 1; i < paternStr.length; i++) {
+            if (paternStr[i] == '*') {
+                prePaternCharArray[i] = prePaternCharArray[i - 1];
+            } else {
+                prePaternCharArray[i] = paternStr[i];
+            }
+        }
     }
 
     private boolean isEmptyPatern(char[] paternStr, int beginIndex, int endIndex) {
@@ -34,50 +81,6 @@ class Solution {
             }
         }
         return empty;
-    }
-
-    private boolean match(int strIndex, int paternIndex, char prePaternChar) {
-//        System.out.println("index " + strIndex + " " + paternIndex);
-        if (resultArray[strIndex][paternIndex] != 0) {
-            return resultArray[strIndex][paternIndex] == 1;
-        }
-        boolean result = matchRun(str, strIndex, paternStr, paternIndex, prePaternChar);
-        resultArray[strIndex][paternIndex] = result ? 1 : 2;
-        return result;
-    }
-
-    private boolean matchRun(char[] str, int strIndex, char[] paternStr, int paternIndex, char prePaternChar) {
-        if (strIndex >= str.length) {
-            return isEmptyPatern(paternStr, paternIndex, paternStr.length);
-        }
-        if (paternIndex >= paternStr.length) {
-            return false;
-        }
-        char charIterm = str[strIndex];
-        boolean isEmpty = true;
-        for (int i = paternIndex; i < paternStr.length; i++) {
-            if (paternStr[i] == '*') {
-                if (isEqualsChar(prePaternChar, charIterm)) {
-                    if (match(strIndex + 1, i + 1, prePaternChar)
-                            || match(strIndex + 1, i, prePaternChar)) {
-                        return true;
-                    }
-                }
-                isEmpty = true;
-            } else {
-                if (!isEmpty) {
-                    return false;
-                }
-                prePaternChar = paternStr[i];
-                if (isEqualsChar(paternStr[i], charIterm)) {
-                    if (match(strIndex + 1, i + 1, prePaternChar)) {
-                        return true;
-                    }
-                }
-                isEmpty = false;
-            }
-        }
-        return false;
     }
 
     private boolean isEqualsChar(char paternChar, char item) {
