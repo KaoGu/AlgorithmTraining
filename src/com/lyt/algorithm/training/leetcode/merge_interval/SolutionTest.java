@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.leetcode.mergeinterval;
+package com.lyt.algorithm.training.leetcode.merge_interval;
 
 import org.junit.jupiter.api.Assertions;
 

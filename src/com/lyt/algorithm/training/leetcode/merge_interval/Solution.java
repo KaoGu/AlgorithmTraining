@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.leetcode.mergeinterval;
+package com.lyt.algorithm.training.leetcode.merge_interval;
 
 import java.util.LinkedList;
 import java.util.List;
