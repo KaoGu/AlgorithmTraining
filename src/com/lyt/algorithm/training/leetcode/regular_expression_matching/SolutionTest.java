@@ -14,6 +14,7 @@ class SolutionTest {
         Assertions.assertFalse(new Solution().isMatch("aa", "a"));
         Assertions.assertTrue(new Solution().isMatch("aa", "a*"));
         Assertions.assertTrue(new Solution().isMatch("ab", ".*"));
+        Assertions.assertTrue(new Solution().isMatch("ab", ".**"));
         Assertions.assertTrue(new Solution().isMatch("aab", "c*a*b"));
         Assertions.assertFalse(new Solution().isMatch("mississippi", "mis*is*p*."));
         Assertions.assertTrue(new Solution().isMatch("abcb", ".*b"));
