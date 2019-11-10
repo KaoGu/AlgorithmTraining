@@ -5,12 +5,9 @@ import java.util.List;
 
 public class RandomTotalSortIterator {
     private RandomSortIterator<Integer> integerRandomSortIterator;
-    private int totalSum;
     private final RandomTotalIterator randomTotalIterator;
 
-
     public RandomTotalSortIterator(int totalSum) {
-        this.totalSum = totalSum;
         this.randomTotalIterator = new RandomTotalIterator(totalSum);
         this.integerRandomSortIterator = new RandomSortIterator<>(randomTotalIterator.next(), Comparator.comparingInt(o -> o));
     }

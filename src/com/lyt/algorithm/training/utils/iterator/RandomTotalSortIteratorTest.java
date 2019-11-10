@@ -8,6 +8,11 @@ import java.util.List;
 class RandomTotalSortIteratorTest {
 
     @Test
+    void next28() {
+        Assertions.assertEquals(134217728, getCount(28));
+    }
+
+    @Test
     void next20() {
         Assertions.assertEquals(524288, getCount(20));
     }
@@ -19,6 +24,7 @@ class RandomTotalSortIteratorTest {
 
 
     private long getCount(int totalNum) {
+        long beginTime = System.currentTimeMillis();
         RandomTotalSortIterator randomTotalSortIterator = new RandomTotalSortIterator(totalNum);
         List<Integer> list = randomTotalSortIterator.next();
         long count = 0;
@@ -29,7 +35,8 @@ class RandomTotalSortIteratorTest {
             count++;
             list = randomTotalSortIterator.next();
         }
-        System.out.println("count " + count);
+        long timeMillis = System.currentTimeMillis() - beginTime;
+        System.out.println("count " + count + " times " + timeMillis/1000 + "." + timeMillis%1000 + "sec");
         return count;
     }
 
