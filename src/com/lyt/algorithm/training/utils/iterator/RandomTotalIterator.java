@@ -22,18 +22,6 @@ public class RandomTotalIterator {
         return listNums;
     }
 
-    public static void main(String[] args) {
-        RandomTotalIterator randomTotalIterator = new RandomTotalIterator(30);
-        List<Integer> list = randomTotalIterator.next();
-        int count = 0;
-        while (null != list && !list.isEmpty()) {
-            System.out.println(Arrays.toString(list.toArray()));
-            count++;
-            list = randomTotalIterator.next();
-        }
-        System.out.println("count " + count);
-    }
-
     public List<Integer> next() {
         if (null == listNum) {
             listNum = init(totalNum);
@@ -62,7 +50,7 @@ public class RandomTotalIterator {
             sum += item;
             listNum.remove(index);
         }
-        return null;
+        return listNum;
     }
 
 
