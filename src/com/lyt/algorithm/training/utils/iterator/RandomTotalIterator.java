@@ -1,7 +1,6 @@
 package com.lyt.algorithm.training.utils.iterator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class RandomTotalIterator {
