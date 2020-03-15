@@ -9,7 +9,6 @@ class Solution {
             return 0;
         }
         int maxAreas = 0;
-        Set<String> vistedSet = new HashSet<>();
         int rowIndex = 0;
         for (int[] lines : grid) {
             int lineIndex = 0;
@@ -18,17 +17,10 @@ class Solution {
                     lineIndex++;
                     continue;
                 }
-                String visitId = getVisitId(rowIndex, lineIndex);
-                if (vistedSet.contains(visitId)) {
-                    lineIndex++;
-                    continue;
+                int areas = find(grid, rowIndex, lineIndex);
+                if (maxAreas < areas) {
+                    maxAreas = areas;
                 }
-                Set<String> newVistSet = new HashSet<>();
-                find(grid, rowIndex, lineIndex, newVistSet);
-                if (maxAreas < newVistSet.size()) {
-                    maxAreas = newVistSet.size();
-                }
-                vistedSet.addAll(newVistSet);
                 lineIndex++;
             }
             rowIndex++;
@@ -36,27 +28,22 @@ class Solution {
         return maxAreas;
     }
 
-    private void find(int[][] grid, int rowIndex, int lineIndex, Set<String> vistedSet) {
+    private int find(int[][] grid, int rowIndex, int lineIndex) {
         if (rowIndex < 0 || rowIndex >= grid.length) {
-            return;
+            return 0;
         }
         if (lineIndex < 0 || lineIndex >= grid[rowIndex].length) {
-            return;
+            return 0;
         }
         if (grid[rowIndex][lineIndex] == 0) {
-            return;
+            return 0;
         }
-        String visitId = getVisitId(rowIndex, lineIndex);
-        if (!vistedSet.contains(visitId)) {
-            vistedSet.add(visitId);
-            find(grid, rowIndex - 1, lineIndex, vistedSet);
-            find(grid, rowIndex + 1, lineIndex, vistedSet);
-            find(grid, rowIndex, lineIndex - 1, vistedSet);
-            find(grid, rowIndex, lineIndex + 1, vistedSet);
-        }
-    }
-
-    private String getVisitId(int rowIndex, int lineIndex) {
-        return rowIndex + "-" + lineIndex;
+        grid[rowIndex][lineIndex] = 0;
+        int count = 1;
+        count += find(grid, rowIndex - 1, lineIndex);
+        count += find(grid, rowIndex + 1, lineIndex);
+        count += find(grid, rowIndex, lineIndex - 1);
+        count += find(grid, rowIndex, lineIndex + 1);
+        return count;
     }
 }
