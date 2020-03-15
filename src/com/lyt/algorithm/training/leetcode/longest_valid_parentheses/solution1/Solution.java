@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.leetcode.longest_valid_parentheses;
+package com.lyt.algorithm.training.leetcode.longest_valid_parentheses.solution1;
 
 class Solution {
     public int longestValidParentheses(String parentheses) {

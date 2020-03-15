@@ -1,9 +1,7 @@
-package com.lyt.algorithm.training.leetcode.longest_valid_parentheses;
+package com.lyt.algorithm.training.leetcode.longest_valid_parentheses.solution2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SolutionTest {
 
