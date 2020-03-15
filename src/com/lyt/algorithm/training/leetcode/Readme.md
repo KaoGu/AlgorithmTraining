@@ -3,4 +3,27 @@
 - 官网
 https://leetcode-cn.com/
 
-## 
+## 题目列表
+
+### 3. 无重复字符的最长子串
+
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+[详细说明](./longest_substring_without_repeating_characters/Readme.md)
+
+### 10. 正则表达式匹配
+给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
+[详细说明](./regular_expression_matching/Readme.md)
+
+### 56. 合并区间
+给出一个区间的集合，请合并所有重叠的区间。
+[详细说明](./merge_interval/Readme.md)
+
+### 695. 岛屿的最大面积
+给定一个包含了一些 0 和 1的非空二维数组 grid , 一个 岛屿 是由四个方向 (水平或垂直) 的 1 (代表土地) 构成的组合。你可以假设二维矩阵的四个边缘都被水包围着。
+[详细说明](./max_area_of_island/Readme.md)
+
+
+### 300. 最长上升子序列
+
+给定一个无序的整数数组，找到其中最长上升子序列的长度。
+[详细说明](./longest_increasing_subsequence/Readme.md)
