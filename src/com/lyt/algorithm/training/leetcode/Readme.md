@@ -10,6 +10,12 @@ https://leetcode-cn.com/
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 [详细说明](./longest_substring_without_repeating_characters/Readme.md)
 
+### 4. 寻找两个有序数组的中位数
+给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
+[详细说明](./median_of_two_sorted_arrays/Readme.md)
+
+
+
 ### 10. 正则表达式匹配
 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
 [详细说明](./regular_expression_matching/Readme.md)
