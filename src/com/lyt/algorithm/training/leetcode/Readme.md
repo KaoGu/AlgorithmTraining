@@ -20,6 +20,12 @@ https://leetcode-cn.com/
 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
 [详细说明](./regular_expression_matching/Readme.md)
 
+
+# 32. 最长有效括号
+
+给定一个只包含 '(' 和 ')' 的字符串，找出最长的包含有效括号的子串的长度。
+[详细说明](./longest_valid_parentheses/Readme.md)
+
 ### 56. 合并区间
 给出一个区间的集合，请合并所有重叠的区间。
 [详细说明](./merge_interval/Readme.md)
