@@ -1,6 +1,6 @@
-package com.lyt.algorithm.training.leetcode.tree.util.iterator;
+package com.lyt.algorithm.training.utils.tree.iterator;
 
-import com.lyt.algorithm.training.leetcode.tree.util.model.TreeNode;
+import com.lyt.algorithm.training.utils.tree.model.TreeNode;
 
 import java.util.*;
 

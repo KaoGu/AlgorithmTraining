@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.utils.iterator;
+package com.lyt.algorithm.training.utils.list.iterator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

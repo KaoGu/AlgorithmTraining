@@ -1,14 +1,12 @@
-package com.lyt.algorithm.training.leetcode.tree.util.handler;
+package com.lyt.algorithm.training.utils.tree.handler;
 
-import com.lyt.algorithm.training.leetcode.tree.util.iterator.TreeIterator;
-import com.lyt.algorithm.training.leetcode.tree.util.model.TreeNode;
-import com.lyt.algorithm.training.utils.iterator.RandomSortIterator;
+import com.lyt.algorithm.training.utils.tree.iterator.TreeIterator;
+import com.lyt.algorithm.training.utils.tree.model.TreeNode;
+import com.lyt.algorithm.training.utils.list.iterator.RandomSortIterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TreeBuilderTest {
 

@@ -1,11 +1,9 @@
-package com.lyt.algorithm.training.leetcode.tree.util.iterator;
+package com.lyt.algorithm.training.utils.tree.iterator;
 
-import com.lyt.algorithm.training.leetcode.tree.util.handler.TreeCodec;
-import com.lyt.algorithm.training.leetcode.tree.util.handler.TreeListCodec;
+import com.lyt.algorithm.training.utils.tree.handler.TreeCodec;
+import com.lyt.algorithm.training.utils.tree.handler.TreeListCodec;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TreeIteratorTest {
 

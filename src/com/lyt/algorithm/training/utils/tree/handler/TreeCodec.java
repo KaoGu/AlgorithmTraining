@@ -1,7 +1,7 @@
-package com.lyt.algorithm.training.leetcode.tree.util.handler;
+package com.lyt.algorithm.training.utils.tree.handler;
 
 
-import com.lyt.algorithm.training.leetcode.tree.util.model.TreeNode;
+import com.lyt.algorithm.training.utils.tree.model.TreeNode;
 
 import java.util.*;
 

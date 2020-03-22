@@ -3,8 +3,6 @@ package com.lyt.algorithm.training.leetcode.tree.serialize_and_deserialize_binar
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CodecTest {
 
     @Test

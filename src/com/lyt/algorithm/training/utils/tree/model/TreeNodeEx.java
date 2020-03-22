@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.leetcode.tree.util.model;
+package com.lyt.algorithm.training.utils.tree.model;
 
 
 public class TreeNodeEx {
