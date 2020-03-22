@@ -34,4 +34,11 @@ class TreeBuilderTest {
         }
         System.out.println("total " + count);
     }
+
+    @Test
+    void buildTest() {
+        List<Integer> values = List.of(3, 1, 2, 4);
+        TreeNode treeNode = new TreeBuilder().buildSortTree(values);
+        Assertions.assertEquals("3,1,4,null,2", new TreeCodec().serialize(treeNode));
+    }
 }
