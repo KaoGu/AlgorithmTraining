@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.utils.list.iterator;
+package com.lyt.algorithm.training.cbb.list.iterator;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.lyt.algorithm.training.utils.tree.handler;
+package com.lyt.algorithm.training.cbb.tree.handler;
 
 
-import com.lyt.algorithm.training.utils.tree.model.TreeNode;
+import com.lyt.algorithm.training.cbb.tree.model.TreeNode;
 
 import java.util.*;
 

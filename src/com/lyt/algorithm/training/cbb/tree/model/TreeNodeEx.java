@@ -1,4 +1,4 @@
-package com.lyt.algorithm.training.utils.tree.model;
+package com.lyt.algorithm.training.cbb.tree.model;
 
 
 public class TreeNodeEx {

@@ -1,6 +1,6 @@
-package com.lyt.algorithm.training.utils.tree.iterator;
+package com.lyt.algorithm.training.cbb.tree.iterator;
 
-import com.lyt.algorithm.training.utils.tree.model.TreeNode;
+import com.lyt.algorithm.training.cbb.tree.model.TreeNode;
 
 import java.util.*;
 

@@ -1,7 +1,7 @@
-package com.lyt.algorithm.training.utils.tree.iterator;
+package com.lyt.algorithm.training.cbb.tree.iterator;
 
-import com.lyt.algorithm.training.utils.tree.handler.TreeCodec;
-import com.lyt.algorithm.training.utils.tree.handler.TreeListCodec;
+import com.lyt.algorithm.training.cbb.tree.handler.TreeCodec;
+import com.lyt.algorithm.training.cbb.tree.handler.TreeListCodec;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
