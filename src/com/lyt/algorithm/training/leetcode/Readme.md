@@ -31,6 +31,11 @@ https://leetcode-cn.com/
 [详细说明](./merge_interval/Readme.md)
 
 
+### 297. 二叉树的序列化与反序列化
+
+[详细说明](./tree/serialize_and_deserialize_binary_tree/Readme.md)
+
+
 ### 300. 最长上升子序列
 
 给定一个无序的整数数组，找到其中最长上升子序列的长度。
