@@ -45,7 +45,7 @@ public class TreeIterator {
         return ret;
     }
 
-    public LinkedList<TreeNode> postorderTraversal(TreeNode root) {
+    public List<TreeNode> postorderTraversal(TreeNode root) {
         LinkedList<TreeNode> ret = new LinkedList<>();
         if (root == null) return ret;
         Stack<TreeNode> stack = new Stack<>();
