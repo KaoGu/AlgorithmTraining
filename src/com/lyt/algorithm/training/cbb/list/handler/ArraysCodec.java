@@ -34,22 +34,14 @@ public class ArraysCodec {
         if (null == listV2) {
             return null;
         }
-        int maxLen = 0;
-        for (List<Integer> list : listV2) {
-            if (null == list) {
-                continue;
-            }
-            if (list.size() > maxLen) {
-                maxLen = list.size();
-            }
-        }
-        int[][] arrays = new int[listV2.size()][maxLen];
+        int[][] arrays = new int[listV2.size()][];
         int lineIndex = -1;
         for (List<Integer> list : listV2) {
             lineIndex++;
             if (null == list) {
                 continue;
             }
+            arrays[lineIndex] = new int[list.size()];
             initArrays(list, arrays[lineIndex]);
         }
         return arrays;
